@@ -6197,11 +6197,6 @@ span.popular-card__figure {
     height: 44rem;
   }
 }
-@media (max-width: 850px) {
-  .product__image {
-    height: 250px;
-  }
-}
 @media (any-hover: hover) {
   .product__image:hover .image-pagination {
     opacity: 1;
@@ -6588,6 +6583,12 @@ span.popular-card__figure {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
+}
+
+@media (max-width: 850px) {
+  .catalogue-section .product__image {
+    height: 250px;
+  }
 }
 
 .filters {

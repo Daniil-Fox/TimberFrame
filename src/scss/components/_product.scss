@@ -94,9 +94,7 @@
       height: 44rem;
     }
 
-    @include mobile {
-      height: 250px;
-    }
+
 
     @include hover {
       .image-pagination {
@@ -454,5 +452,13 @@
   &--active {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.catalogue-section {
+  .product__image {
+    @include mobile {
+      height: 250px;
+    }
   }
 }
