@@ -396,6 +396,10 @@
     padding-top: 40px;
   }
 
+  @media (min-width: 320px) and (max-width: 375px) {
+    padding-top: 120px;
+  }
+
   @media (min-width: 1441px) {
     padding-top: 12rem;
     padding-bottom: 12rem;

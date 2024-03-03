@@ -11924,6 +11924,11 @@ span.popular-card__figure {
     padding-top: 40px;
   }
 }
+@media (min-width: 320px) and (max-width: 375px) {
+  .timber-ready {
+    padding-top: 120px;
+  }
+}
 @media (min-width: 1441px) {
   .timber-ready {
     padding-top: 12rem;
