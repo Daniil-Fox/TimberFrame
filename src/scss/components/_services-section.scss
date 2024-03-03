@@ -14,7 +14,7 @@
       max-width: 100rem;
     }
 
-    @include mobile {
+    @media (max-width: 1023px) {
       margin-bottom: 74px;
     }
 
@@ -33,7 +33,7 @@
       padding-left: 11.3rem;
     }
 
-    @include mobile {
+    @media (max-width: 1023px) {
       padding: 0;
       flex-direction: column;
     }
@@ -54,7 +54,7 @@
       opacity: 1;
     }
 
-    @include mobile {}
+    @media (max-width: 1023px) {}
   }
 
   &__left {
@@ -70,14 +70,15 @@
       margin-right: 2rem;
     }
 
-    @include mobile {
+    @media (max-width: 1023px) {
       // position: sticky;
       // top: 100px;
 
       &::after {
         content: '';
         position: absolute;
-        width: 100%;
+        width: 500%;
+        left: -50%;
         height: 100%;
         bottom: 25px;
         transform: scaleY(1.4);
@@ -103,13 +104,19 @@
       right: -20px;
       border: 1px solid var(--focus-color);
 
-      @include mobile {
+      @media (max-width: 1023px) {
         top: -10px;
         right: -10px;
       }
     }
 
-    @include mobile {
+    @media (max-width: 1023px) {
+      width: 73vw;
+      margin: 0 auto;
+      height: 40vh;
+    }
+
+    @media (max-width: 768px) {
       width: 73vw;
       margin: 0 auto;
       height: 50vh;
@@ -133,7 +140,7 @@
     // border-top: 1px solid var(--focus-color);
     width: 100%;
 
-    @include mobile {
+    @media (max-width: 1023px) {
       margin-top: 80px;
     }
   }
@@ -146,7 +153,17 @@
     width: 100%;
     border-top: 1px solid var(--focus-color);
 
-    @include mobile {
+    @media (max-width: 1023px) {
+      position: fixed;
+      width: 100%;
+      height: 1px;
+      bottom: 30%;
+      top: unset;
+      transform: unset;
+      border-top: unset;
+    }
+
+    @media (max-width: 768px) {
       position: fixed;
       width: 100%;
       height: 1px;
@@ -169,7 +186,7 @@
       padding-left: 6.6rem;
     }
 
-    @include mobile {
+    @media (max-width: 1023px) {
       padding-left: 0;
       position: relative;
     }
@@ -188,7 +205,7 @@
       padding-left: 4.2rem;
     }
 
-    @include mobile {
+    @media (max-width: 1023px) {
       padding: 0;
       margin: 32px 0;
       margin-left: 16px;
@@ -243,7 +260,7 @@
       letter-spacing: 0.024rem;
     }
 
-    @include mobile {
+    @media (max-width: 1023px) {
       font-size: 20px;
     }
   }

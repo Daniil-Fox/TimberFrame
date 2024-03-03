@@ -16,6 +16,17 @@ const lenis = new Lenis({
 
 const implemObjectsSection = document.querySelector('.implemObjects-section')
 
+import Rellax from "rellax";
+
+try {
+  var rellax = new Rellax(".rellax", {
+    breakpoints: [768, , 1201],
+    center: true,
+  });
+} catch (e) {
+  console.log(e);
+}
+
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
@@ -370,7 +381,7 @@ if (itemsTexts.length > 0) {
   changeSlide();
   let mm = gsap.matchMedia();
 
-  mm.add("(min-width: 769px)", () => {
+  mm.add("(min-width: 1024px)", () => {
     let t1 = gsap.timeline();
     t1.fromTo(
       ".services-section__list",
@@ -392,9 +403,7 @@ if (itemsTexts.length > 0) {
       pin: ".services-section__container",
       invalidateOnRefresh: true,
     });
-  });
-
-  if (window.matchMedia("(max-width: 768px)").matches) {
+  }).add("(max-width: 1023px)", () => {
     firstItem.classList.add("active");
     const items = document.querySelectorAll('.services-section__item')
     let scrollOffset = document.querySelector('.services-section__container').scrollHeight - items[8].scrollHeight - items[7].scrollHeight - items[6].scrollHeight - document.querySelector('.services-section__left').scrollHeight
@@ -406,20 +415,21 @@ if (itemsTexts.length > 0) {
       pin: ".services-section__left",
       invalidateOnRefresh: true,
     });
-  }
+  })
+
 }
 
-// ScrollTrigger.refresh();
+
 
 // background parallax
-setTimeout(() => {
+window.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector(".parallax")) {
     gsap.registerPlugin(CSSRulePlugin);
-    let rule = CSSRulePlugin.getRule(".parallax__wrapper::before");
+    // let rule = CSSRulePlugin.getRule(".parallax__wrapper::before");
     const timeLine1 = gsap.timeline();
     timeLine1
       .fromTo(".parallax__body", { scale: 0.5 }, { scale: 1 })
-      .set(rule, { cssRule: { opacity: 1 } });
+      // .set(rule, { cssRule: { opacity: 1 } });
 
     ScrollTrigger.create({
       animation: timeLine1,
@@ -431,36 +441,29 @@ setTimeout(() => {
       invalidateOnRefresh: true,
     });
   }
-}, 0);
+
+  ScrollTrigger.refresh();
+  if (document.querySelector(".shadow")) {
+    const shadowAnim = gsap.timeline();
+    shadowAnim.fromTo(
+      ".shadow__body",
+      { backgroundColor: "#02090e" },
+      { backgroundColor: "#e8e8e8" }
+    );
+    ScrollTrigger.create({
+      animation: shadowAnim,
+      trigger: ".eco-house",
+      start: "bottom-=25% top",
+      end: "+=500px",
+      scrub: 0.5,
+      invalidateOnRefresh: true,
+    });
+  }
+})
+
 
 // shadow transition
-if (document.querySelector(".shadow")) {
-  const shadowAnim = gsap.timeline();
-  shadowAnim.fromTo(
-    ".shadow__body",
-    { backgroundColor: "#02090e" },
-    { backgroundColor: "#e8e8e8" }
-  );
-  ScrollTrigger.create({
-    animation: shadowAnim,
-    trigger: ".eco-house",
-    start: "bottom-=25% top",
-    end: "+=500px",
-    scrub: 0.5,
-    invalidateOnRefresh: true,
-  });
-}
 
-import Rellax from "rellax";
-
-try {
-  var rellax = new Rellax(".rellax", {
-    breakpoints: [768, , 1201],
-    center: true,
-  });
-} catch (e) {
-  console.log(e);
-}
 
 const circles = document.querySelectorAll(".progress");
 if (circles) {
@@ -939,7 +942,7 @@ let func = throttle(setHeaderTheme);
 const projectCards = document.querySelectorAll(".projects-card");
 
 if (projectCards) {
-  if (window.matchMedia("(max-width: 768px)").matches) {
+  if (window.matchMedia("(max-width: 850px)").matches) {
     const observer = new IntersectionObserver(
       (entries, options) => {
         entries.forEach((el) => {
@@ -2020,14 +2023,16 @@ if(document.querySelector('.timber-main__content--main')){
   timelineText.to(texts[1], {y: "-3rem", opacity: 0})
   timelineText.to(texts[2], {y: "-1rem", opacity: 1, duration: 1})
   let startPos = 'top top+=70'
+  let endPos = 'bottom'
   if(window.matchMedia('(max-width: 768px)').matches){
     startPos = 'top top+=70'
+    // endPos = 'bottom bottom'
   }
   ScrollTrigger.create({
     animation: timelineText,
     trigger: '.timber-main__content',
     start: startPos,
-    end: "bottom",
+    end: endPos,
     scrub: 1,
     ease: 'ease-out',
     invalidateOnRefresh: true
@@ -2043,7 +2048,7 @@ if(document.querySelector('.timber-main__content--main')){
     animation: timelineImages,
     trigger: '.timber-main__content',
     start: startPos,
-    end: "bottom",
+    end: endPos,
     scrub: 1,
     ease: 'none',
     invalidateOnRefresh: true
@@ -2085,17 +2090,17 @@ if(document.querySelector('.timber-main__content--main')){
 
   gsap.set([textsSec[0], textsSec[1], textsSec[2]], {y: "1rem", opacity: 0})
 
-  timelineTextSec.to(textsSec[0], {y: "-1rem", opacity: 1, duration: 0.8})
-  timelineTextSec.to(textsSec[0], {y: "-3rem", opacity: 0})
-  timelineTextSec.to(textsSec[1], {y: "-1rem", opacity: 1, duration: 0.8})
-  timelineTextSec.to(textsSec[1], {y: "-3rem", opacity: 0})
-  timelineTextSec.to(textsSec[2], {y: "-1rem", opacity: 1, duration: 0.8})
+  timelineTextSec.to(textsSec[0], {y: "-1rem", xPercent: '-50', opacity: 1, duration: 0.8})
+  timelineTextSec.to(textsSec[0], {y: "-3rem", xPercent: '-50', opacity: 0})
+  timelineTextSec.to(textsSec[1], {y: "-1rem", xPercent: '-50', opacity: 1, duration: 0.8})
+  timelineTextSec.to(textsSec[1], {y: "-3rem", xPercent: '-50', opacity: 0})
+  timelineTextSec.to(textsSec[2], {y: "-1rem", xPercent: '-50', opacity: 1, duration: 0.8})
 
   ScrollTrigger.create({
     animation: timelineTextSec,
     trigger: '.timber-main__content--sec',
     start: startPos,
-    end: "bottom",
+    end: endPos,
     scrub: 1,
     ease: 'ease-out',
     invalidateOnRefresh: true,
@@ -2110,7 +2115,7 @@ if(document.querySelector('.timber-main__content--main')){
     animation: timelineImagesSec,
     trigger: '.timber-main__content--sec',
     start: startPos,
-    end: "bottom",
+    end: endPos,
     scrub: 1,
     ease: 'none',
     invalidateOnRefresh: true,
