@@ -532,8 +532,7 @@ window.addEventListener('DOMContentLoaded', () => {
       scrub: 0.2,
       pin: ".parallax__wrapper",
       toggleActions: "play reset play none",
-      invalidateOnRefresh: true,
-      markers: true
+      invalidateOnRefresh: true
     });
   }
   gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.refresh();

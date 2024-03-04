@@ -442,7 +442,6 @@ window.addEventListener('DOMContentLoaded', () => {
       pin: ".parallax__wrapper",
       toggleActions: "play reset play none",
       invalidateOnRefresh: true,
-      markers: true
     });
   }
 
