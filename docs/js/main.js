@@ -926,7 +926,7 @@ let func = (0,_functions_throttle__WEBPACK_IMPORTED_MODULE_10__.throttle)(setHea
 // }
 const projectCards = document.querySelectorAll(".projects-card");
 if (projectCards) {
-  if (window.matchMedia("(max-width: 850px)").matches) {
+  if (window.matchMedia("(max-width: 1366px)").matches) {
     const observer = new IntersectionObserver((entries, options) => {
       entries.forEach(el => {
         if (el.isIntersecting) {

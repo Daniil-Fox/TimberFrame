@@ -951,7 +951,7 @@ let func = throttle(setHeaderTheme);
 const projectCards = document.querySelectorAll(".projects-card");
 
 if (projectCards) {
-  if (window.matchMedia("(max-width: 850px)").matches) {
+  if (window.matchMedia("(max-width: 1366px)").matches) {
     const observer = new IntersectionObserver(
       (entries, options) => {
         entries.forEach((el) => {

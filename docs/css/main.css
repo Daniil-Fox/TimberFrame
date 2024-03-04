@@ -4206,7 +4206,7 @@ span.popular-card__figure {
   -webkit-transition: background 0.5s ease-in;
   transition: background 0.5s ease-in;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
   .projects-card::before {
     background: rgba(37, 35, 33, 0.6);
   }
