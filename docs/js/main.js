@@ -477,7 +477,7 @@ if (itemsTexts.length > 0) {
   });
   changeSlide();
   let mm = gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.matchMedia();
-  mm.add("(min-width: 1024px)", () => {
+  mm.add("(min-width: 1025px)", () => {
     let t1 = gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.timeline();
     t1.fromTo(".services-section__list", {
       y: () => -document.querySelector(".services-section__item").offsetHeight
@@ -493,7 +493,7 @@ if (itemsTexts.length > 0) {
       pin: ".services-section__container",
       invalidateOnRefresh: true
     });
-  }).add("(max-width: 1023px)", () => {
+  }).add("(max-width: 1024px)", () => {
     firstItem.classList.add("active");
     const items = document.querySelectorAll('.services-section__item');
     let scrollOffset = document.querySelector('.services-section__container').scrollHeight - items[8].scrollHeight - items[7].scrollHeight - items[6].scrollHeight - document.querySelector('.services-section__left').scrollHeight;
@@ -507,28 +507,33 @@ if (itemsTexts.length > 0) {
     });
   });
 }
+window.addEventListener("orientationchange", function () {
+  location.reload();
+}, false);
 
 // background parallax
 window.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector(".parallax")) {
     gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_8__.CSSRulePlugin);
-    // let rule = CSSRulePlugin.getRule(".parallax__wrapper::before");
+    let rule = gsap_all__WEBPACK_IMPORTED_MODULE_8__.CSSRulePlugin.getRule(".parallax__wrapper::before");
     const timeLine1 = gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.timeline();
-    timeLine1.fromTo(".parallax__body", {
-      scale: 0.5
-    }, {
+    timeLine1.to(".parallax__body", {
       scale: 1
+    }).set(rule, {
+      cssRule: {
+        opacity: 1
+      }
     });
-    // .set(rule, { cssRule: { opacity: 1 } });
-
     gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
       animation: timeLine1,
-      trigger: ".parallax__wrapper",
-      start: "top top",
+      trigger: ".projects-section",
+      start: "bottom top",
       end: "+=20%",
       scrub: 0.2,
-      pin: true,
-      invalidateOnRefresh: true
+      pin: ".parallax__wrapper",
+      toggleActions: "play reset play none",
+      invalidateOnRefresh: true,
+      markers: true
     });
   }
   gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.refresh();
@@ -648,6 +653,13 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     setHeightOfWrapper();
   }
+});
+window.addEventListener('resize', () => {
+  setTimeout(() => {
+    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.refresh(true);
+    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.update();
+    onResize();
+  }, 100);
 });
 window.onload = () => {
   const observer = new IntersectionObserver((entries, observer) => {

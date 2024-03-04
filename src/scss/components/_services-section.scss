@@ -14,7 +14,7 @@
       max-width: 100rem;
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
       margin-bottom: 74px;
     }
 
@@ -33,7 +33,7 @@
       padding-left: 11.3rem;
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
       padding: 0;
       flex-direction: column;
     }
@@ -54,7 +54,7 @@
       opacity: 1;
     }
 
-    @media (max-width: 1023px) {}
+    @media (max-width: 1024px) {}
   }
 
   &__left {
@@ -70,9 +70,10 @@
       margin-right: 2rem;
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
       // position: sticky;
       // top: 100px;
+      width: auto;
 
       &::after {
         content: '';
@@ -104,13 +105,13 @@
       right: -20px;
       border: 1px solid var(--focus-color);
 
-      @media (max-width: 1023px) {
+      @media (max-width: 1024px) {
         top: -10px;
         right: -10px;
       }
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
       width: 73vw;
       margin: 0 auto;
       height: 40vh;
@@ -140,7 +141,7 @@
     // border-top: 1px solid var(--focus-color);
     width: 100%;
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
       margin-top: 80px;
     }
   }
@@ -153,7 +154,7 @@
     width: 100%;
     border-top: 1px solid var(--focus-color);
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
       position: fixed;
       width: 100%;
       height: 1px;
@@ -186,7 +187,7 @@
       padding-left: 6.6rem;
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
       padding-left: 0;
       position: relative;
     }
@@ -205,7 +206,7 @@
       padding-left: 4.2rem;
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
       padding: 0;
       margin: 32px 0;
       margin-left: 16px;
@@ -260,7 +261,7 @@
       letter-spacing: 0.024rem;
     }
 
-    @media (max-width: 1023px) {
+    @media (max-width: 1024px) {
       font-size: 20px;
     }
   }

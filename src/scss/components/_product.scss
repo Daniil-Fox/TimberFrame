@@ -454,11 +454,3 @@
     transform: translateY(0);
   }
 }
-
-.catalogue-section {
-  .product__image {
-    @include mobile {
-      height: 250px;
-    }
-  }
-}
