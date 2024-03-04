@@ -1873,29 +1873,24 @@ if (document.querySelector('.timber-main__content--main')) {
   });
   timelineTextSec.to(textsSec[0], {
     y: "-1rem",
-    xPercent: '-50',
     opacity: 1,
     duration: 0.8
   });
   timelineTextSec.to(textsSec[0], {
     y: "-3rem",
-    xPercent: '-50',
     opacity: 0
   });
   timelineTextSec.to(textsSec[1], {
     y: "-1rem",
-    xPercent: '-50',
     opacity: 1,
     duration: 0.8
   });
   timelineTextSec.to(textsSec[1], {
     y: "-3rem",
-    xPercent: '-50',
     opacity: 0
   });
   timelineTextSec.to(textsSec[2], {
     y: "-1rem",
-    xPercent: '-50',
     opacity: 1,
     duration: 0.8
   });
