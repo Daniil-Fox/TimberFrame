@@ -543,13 +543,25 @@ window.addEventListener('DOMContentLoaded', () => {
     }, {
       backgroundColor: "#e8e8e8"
     });
-    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
-      animation: shadowAnim,
-      trigger: ".eco-house",
-      start: "bottom-=25% top",
-      end: "+=500px",
-      scrub: 0.5,
-      invalidateOnRefresh: true
+    const mm = gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.matchMedia();
+    mm.add('(min-width: 1025px)', () => {
+      gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+        animation: shadowAnim,
+        trigger: ".eco-house",
+        start: "bottom-=16% top",
+        end: "+=500px",
+        scrub: 0.5,
+        invalidateOnRefresh: true
+      });
+    }).add('(max-width: 1024px)', () => {
+      gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+        animation: shadowAnim,
+        trigger: ".eco-house",
+        start: "bottom-=25% top",
+        end: "+=500px",
+        scrub: 0.5,
+        invalidateOnRefresh: true
+      });
     });
   }
 });

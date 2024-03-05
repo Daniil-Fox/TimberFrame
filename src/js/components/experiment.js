@@ -453,14 +453,27 @@ window.addEventListener('DOMContentLoaded', () => {
       { backgroundColor: "#02090e" },
       { backgroundColor: "#e8e8e8" }
     );
-    ScrollTrigger.create({
-      animation: shadowAnim,
-      trigger: ".eco-house",
-      start: "bottom-=25% top",
-      end: "+=500px",
-      scrub: 0.5,
-      invalidateOnRefresh: true,
-    });
+    const mm = gsap.matchMedia()
+
+    mm.add('(min-width: 1025px)', () => {
+      ScrollTrigger.create({
+        animation: shadowAnim,
+        trigger: ".eco-house",
+        start: "bottom-=16% top",
+        end: "+=500px",
+        scrub: 0.5,
+        invalidateOnRefresh: true,
+      });
+    }).add('(max-width: 1024px)', () => {
+      ScrollTrigger.create({
+        animation: shadowAnim,
+        trigger: ".eco-house",
+        start: "bottom-=25% top",
+        end: "+=500px",
+        scrub: 0.5,
+        invalidateOnRefresh: true,
+      });
+    })
   }
 })
 

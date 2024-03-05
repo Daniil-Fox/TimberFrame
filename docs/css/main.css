@@ -4563,6 +4563,13 @@ span.popular-card__figure {
   gap: 0 50px;
   margin-bottom: 27px;
 }
+@media (min-width: 850px) and (max-width: 1366px) {
+  .house-content__grid {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
 .house-content__grid--mt {
   margin-top: 190px;
 }
@@ -4737,6 +4744,17 @@ span.popular-card__figure {
   display: -ms-flexbox;
   display: flex;
 }
+@media (min-width: 850px) and (max-width: 1366px) {
+  .house-content__image#bh1, .house-content__image#bh4 {
+    aspect-ratio: 1/1;
+  }
+}
+@media (min-width: 850px) and (max-width: 1366px) {
+  .house-content__image#bh4 img {
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+}
 .house-content__image picture {
   width: 100%;
 }
@@ -4879,6 +4897,8 @@ span.popular-card__figure {
   background-size: 100% auto;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  position: relative;
+  z-index: 4;
 }
 @media (min-width: 2560px) {
   .eco-house {
@@ -10765,6 +10785,16 @@ span.popular-card__figure {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+@media (max-width: 850px) {
+  .harmony-item:first-child {
+    padding-top: 0px;
+  }
+}
+@media (max-width: 850px) {
+  .harmony-item {
+    padding-top: 40px;
+  }
 }
 @media (min-width: 1441px) {
   .harmony-item {
