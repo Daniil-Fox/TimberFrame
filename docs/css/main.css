@@ -10608,6 +10608,11 @@ span.popular-card__figure {
     max-width: 50.3rem;
   }
 }
+@media (max-width: 1366px) {
+  .about-video__content {
+    margin: 0 auto;
+  }
+}
 .about-video__content > h4 {
   margin: 0;
   margin-bottom: 12px;
@@ -10750,6 +10755,12 @@ span.popular-card__figure {
     padding-top: 6rem;
   }
 }
+@media (max-width: 1366px) {
+  .about-harmony__content {
+    padding-top: 0;
+    padding-bottom: 60px;
+  }
+}
 @media (max-width: 850px) {
   .about-harmony__content {
     -webkit-box-orient: vertical;
@@ -10791,7 +10802,7 @@ span.popular-card__figure {
     padding-top: 0px;
   }
 }
-@media (max-width: 850px) {
+@media (max-width: 1366px) {
   .harmony-item {
     padding-top: 40px;
   }

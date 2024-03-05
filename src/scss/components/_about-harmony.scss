@@ -67,6 +67,11 @@
       padding-top: 6rem;
     }
 
+    @media (max-width: 1366px) {
+      padding-top: 0;
+      padding-bottom: 60px;
+    }
+
     @include mobile {
       flex-direction: column;
       justify-content: center;
@@ -92,7 +97,7 @@
     }
   }
 
-  @include mobile {
+  @media (max-width: 1366px) {
     padding-top: 40px;
   }
 
