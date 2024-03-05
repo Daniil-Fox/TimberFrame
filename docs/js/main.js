@@ -428,7 +428,45 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger);
-
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector(".parallax")) {
+    gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_8__.CSSRulePlugin);
+    let rule = gsap_all__WEBPACK_IMPORTED_MODULE_8__.CSSRulePlugin.getRule(".parallax__wrapper::before");
+    const timeLine1 = gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.timeline();
+    timeLine1.to(".parallax__body", {
+      scale: 1
+    }).set(rule, {
+      cssRule: {
+        opacity: 1
+      }
+    });
+    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+      animation: timeLine1,
+      trigger: ".projects-section",
+      start: "bottom top",
+      end: "+=20%",
+      scrub: 0.2,
+      pin: ".parallax__wrapper",
+      toggleActions: "play reset play none",
+      invalidateOnRefresh: true
+    });
+  }
+  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.refresh();
+  if (document.querySelector(".shadow")) {
+    const shadowAnim = gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.timeline();
+    shadowAnim.to(".shadow__body", {
+      backgroundColor: "#e8e8e8"
+    });
+    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+      animation: shadowAnim,
+      trigger: ".eco-house",
+      start: "bottom-=25% top",
+      end: "+=500px",
+      scrub: 0.5,
+      invalidateOnRefresh: true
+    });
+  }
+});
 // services section
 
 const itemsTexts = document.querySelectorAll(".services-section__text");
@@ -507,64 +545,8 @@ if (itemsTexts.length > 0) {
     });
   });
 }
-window.addEventListener("orientationchange", function () {
-  location.reload();
-}, false);
 
 // background parallax
-window.addEventListener('DOMContentLoaded', () => {
-  if (document.querySelector(".parallax")) {
-    gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_8__.CSSRulePlugin);
-    let rule = gsap_all__WEBPACK_IMPORTED_MODULE_8__.CSSRulePlugin.getRule(".parallax__wrapper::before");
-    const timeLine1 = gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.timeline();
-    timeLine1.to(".parallax__body", {
-      scale: 1
-    }).set(rule, {
-      cssRule: {
-        opacity: 1
-      }
-    });
-    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
-      animation: timeLine1,
-      trigger: ".projects-section",
-      start: "bottom top",
-      end: "+=20%",
-      scrub: 0.2,
-      pin: ".parallax__wrapper",
-      toggleActions: "play reset play none",
-      invalidateOnRefresh: true
-    });
-  }
-  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.refresh();
-  if (document.querySelector(".shadow")) {
-    const shadowAnim = gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.timeline();
-    shadowAnim.fromTo(".shadow__body", {
-      backgroundColor: "#02090e"
-    }, {
-      backgroundColor: "#e8e8e8"
-    });
-    const mm = gsap__WEBPACK_IMPORTED_MODULE_7__.gsap.matchMedia();
-    mm.add('(min-width: 1025px)', () => {
-      gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
-        animation: shadowAnim,
-        trigger: ".eco-house",
-        start: "bottom-=16% top",
-        end: "+=500px",
-        scrub: 0.5,
-        invalidateOnRefresh: true
-      });
-    }).add('(max-width: 1024px)', () => {
-      gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
-        animation: shadowAnim,
-        trigger: ".eco-house",
-        start: "bottom-=25% top",
-        end: "+=500px",
-        scrub: 0.5,
-        invalidateOnRefresh: true
-      });
-    });
-  }
-});
 
 // shadow transition
 
@@ -1983,6 +1965,11 @@ if (document.querySelector('.timber-main__content--main')) {
     // })
   });
 }
+
+window.addEventListener("orientationchange", function () {
+  location.reload();
+  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.refresh();
+}, false);
 
 /***/ }),
 
