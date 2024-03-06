@@ -4039,6 +4039,7 @@ span.popular-card__figure {
   counter-increment: counter 1;
   padding: 48px 0;
   padding-left: 42px;
+  padding-right: 25px;
   color: var(--gray-lite-color);
   -webkit-transition: color 0.1s ease-in;
   transition: color 0.1s ease-in;
@@ -5143,15 +5144,11 @@ span.popular-card__figure {
 }
 
 .add {
-  padding: 65px 108px 66px 166px;
+  padding: 65px 108px;
   background: rgba(255, 150, 92, 0.2);
   position: relative;
   z-index: 2;
-}
-@media (min-width: 1440px) {
-  .add {
-    padding: 6.5rem 10.8rem 6.6rem 16.6rem;
-  }
+  padding: 6.5rem 10.8rem;
 }
 @media (max-width: 850px) {
   .add {
@@ -5257,15 +5254,15 @@ span.popular-card__figure {
     font-size: 24px;
   }
 }
-@media (min-width: 1440px) {
-  .add-item:not(:last-child) {
-    max-width: 40rem;
-  }
-}
 @media (max-width: 850px) {
   .add-item:not(:last-child) {
     margin-right: 0;
     margin-bottom: 64px;
+  }
+}
+@media (min-width: 1440px) {
+  .add-item {
+    max-width: 40rem;
   }
 }
 
@@ -7238,9 +7235,8 @@ span.popular-card__figure {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 100%;
+  height: auto;
   width: 100%;
-  min-height: 535px;
   position: relative;
 }
 @media (min-width: 1281px) {
@@ -7254,10 +7250,7 @@ span.popular-card__figure {
   }
 }
 .item-product__slider .swiper-slide.card img {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -8772,7 +8765,7 @@ span.popular-card__figure {
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
 }
-@media (max-width: 850px) {
+@media (max-width: 576px) {
   .design-section__container {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
@@ -8994,10 +8987,10 @@ span.popular-card__figure {
   transition: transform 0.3s ease-in;
   transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
 }
-@media (max-width: 850px) {
+@media (max-width: 576px) {
   .design-section__image img {
     position: static;
-    height: unset;
+    height: auto;
   }
 }
 @media (min-width: 1441px) {
@@ -9006,7 +8999,12 @@ span.popular-card__figure {
     margin-bottom: 3.2rem;
   }
 }
-@media (max-width: 850px) {
+@media (max-width: 1024px) {
+  .design-section__image {
+    height: 24.5rem;
+  }
+}
+@media (max-width: 576px) {
   .design-section__image {
     position: static;
     height: unset;
@@ -11903,6 +11901,9 @@ span.popular-card__figure {
   }
 }
 
+.timber-main__content--sec {
+  padding-right: 20px;
+}
 .timber-main__content--sec .timber-item__images {
   -ms-grid-column-span: 6;
   grid-column: 6 span;
