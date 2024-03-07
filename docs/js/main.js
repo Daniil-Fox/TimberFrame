@@ -2025,6 +2025,14 @@ document.addEventListener('fetchit:success', e => {
 window.addEventListener("orientationchange", function () {
   location.reload();
   gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.refresh();
+  if (document.querySelector('.alert') && window.innerHeight <= 576 && screen.orientation.type == 'landscape-primary') {
+    document.body.style.overflow = 'hidden'; // установка сразу
+    setTimeout(() => {
+      document.body.style.overflow = 'hidden'; // прелоадер сбрасывает свойство через 3с, поэтому еще раз зададим
+    }, 3050);
+  } else {
+    document.body.style.overflow = null;
+  }
 }, false);
 
 /***/ }),

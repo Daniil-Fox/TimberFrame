@@ -1583,6 +1583,38 @@ html.lenis {
   }
 }
 
+.alert {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  background-color: var(--white-color);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px;
+}
+.alert h3 {
+  margin: 0;
+  margin: 0;
+  color: var(--black---brand, #252321);
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.alert h3 span {
+  color: var(--focus-color);
+}
+
+@media (orientation: landscape) and (max-height: 576px) {
+  .alert {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 .header {
   position: fixed;
   z-index: 10;
