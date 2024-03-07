@@ -122,7 +122,12 @@ const popularContentSlider = new Swiper(".slider-popular__content", {
     crossFade: true,
   },
 });
-
+popularImagesSlider.on('slideChange', (slider) => {
+  popularContentSlider.slideTo(slider.activeIndex)
+})
+popularContentSlider.on('slideChange', (slider) => {
+  popularImagesSlider.slideTo(slider.activeIndex)
+})
 if(popularImages && popularImages.length > 0){
   const popularImgObserver = new IntersectionObserver( (entries, observer) => {
     entries.forEach(el => {

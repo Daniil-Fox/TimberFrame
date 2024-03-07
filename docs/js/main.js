@@ -240,6 +240,12 @@ const popularContentSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swip
     crossFade: true
   }
 });
+popularImagesSlider.on('slideChange', slider => {
+  popularContentSlider.slideTo(slider.activeIndex);
+});
+popularContentSlider.on('slideChange', slider => {
+  popularImagesSlider.slideTo(slider.activeIndex);
+});
 if (popularImages && popularImages.length > 0) {
   const popularImgObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(el => {
