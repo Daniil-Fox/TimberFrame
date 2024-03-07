@@ -4126,7 +4126,7 @@ span.popular-card__figure {
 }
 @media (max-width: 850px) {
   .video-section {
-    height: 60vh;
+    display: none;
   }
 }
 .video-section video {
@@ -5561,16 +5561,16 @@ span.popular-card__figure {
     padding-bottom: 53px;
   }
 }
-.office__btn {
+.office__btn, .office__link {
   margin-bottom: 80px;
 }
 @media (min-width: 1440px) {
-  .office__btn {
+  .office__btn, .office__link {
     margin-bottom: 8rem;
   }
 }
 @media (max-width: 850px) {
-  .office__btn {
+  .office__btn, .office__link {
     margin-bottom: 55px;
   }
 }
@@ -5747,6 +5747,7 @@ span.popular-card__figure {
 .form__label {
   display: block;
   width: 100%;
+  position: relative;
 }
 .form__label:not(:last-child) {
   margin-bottom: 20px;
@@ -5778,6 +5779,13 @@ span.popular-card__figure {
   .form__label span {
     font-size: 1.4rem;
   }
+}
+.form__label span[data-error] {
+  position: absolute;
+  display: block;
+}
+.form__label span[data-error] span.error {
+  color: #CC0000;
 }
 .form__input {
   color: var(--black-brand-color);
@@ -5821,6 +5829,9 @@ span.popular-card__figure {
   .form__btn {
     margin-top: 1.6rem;
   }
+}
+.form__btn.btn-disabled {
+  background-color: #bdbdbd;
 }
 .form__privacy {
   color: #79716C;
@@ -6678,8 +6689,8 @@ span.popular-card__figure {
     gap: 0.4rem;
   }
 }
-.filters ul > li > button {
-  cursor: pointer;
+.filters ul > li > button, .filters ul > li > a {
+  display: inline-block;
   border: none;
   margin: 0;
   background: none;
@@ -6697,11 +6708,11 @@ span.popular-card__figure {
   -webkit-transition: outline 0.2s ease-in;
   transition: outline 0.2s ease-in;
 }
-.filters ul > li > button:active {
+.filters ul > li > button:active, .filters ul > li > a:active {
   outline-color: var(--focus-active-color);
 }
 @media (min-width: 1440px) {
-  .filters ul > li > button {
+  .filters ul > li > button, .filters ul > li > a {
     padding: 0.8rem 2.4rem;
     font-size: 1.2rem;
     border-radius: 0.4rem;
@@ -6709,22 +6720,22 @@ span.popular-card__figure {
   }
 }
 @media (max-width: 850px) {
-  .filters ul > li > button {
+  .filters ul > li > button, .filters ul > li > a {
     padding: 8px 23.5px;
   }
-  .filters ul > li > button:focus, .filters ul > li > button:active {
+  .filters ul > li > button:focus, .filters ul > li > button:active, .filters ul > li > a:focus, .filters ul > li > a:active {
     outline-color: transparent;
   }
 }
 @media (any-hover: hover) {
-  .filters ul > li > button:not(.active):hover {
+  .filters ul > li > button:not(.active):hover, .filters ul > li > a:not(.active):hover {
     outline-color: var(--focus-color);
   }
 }
-.filters ul > li > button.active {
+.filters ul > li > button.active, .filters ul > li > a.active {
   outline-color: var(--focus-active-color) !important;
 }
-.filters ul > li > button.disabled {
+.filters ul > li > button.disabled, .filters ul > li > a.disabled {
   color: var(--gray-lite-color);
   pointer-events: none;
 }
