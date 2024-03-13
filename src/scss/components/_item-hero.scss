@@ -86,6 +86,7 @@
   &__slider {
     position: relative;
     max-width: 950px;
+    max-height: unset;
 
     @media (min-width: 1441px) {
       max-width: unset;
@@ -117,6 +118,7 @@
       //   min-height: unset;
       // }
 
+      picture,
       img {
         width: 100%;
 

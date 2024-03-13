@@ -119,11 +119,19 @@
       gap: 5rem;
     }
 
+    @media (min-width: 768px) and (max-width: 1024px) {
+      height: 50vh;
+    }
+
     @include mobile {
-      height: calc(100vh - 200px);
+      height: 95vh;
       grid-template-columns: 1fr;
       align-items: flex-start;
       gap: 0;
+    }
+
+    @media (max-width: 750px) {
+      height: calc(100vh - 200px);
     }
   }
 }
@@ -353,6 +361,11 @@
     padding-left: 60px;
     margin-top: 30px;
 
+    @media (min-width: 768px) and (max-width: 1024px) {
+      padding-left: 0;
+      margin-top: 100px;
+    }
+
     @include mobile {
       padding-left: 16px;
       padding-right: 16px;
@@ -433,7 +446,7 @@
     }
 
     @include mobile {
-      font-size: 24px;
+      font-size: 32px;
       letter-spacing: 0.48px;
       margin-bottom: 4rem;
     }
