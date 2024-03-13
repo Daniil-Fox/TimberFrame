@@ -192,8 +192,8 @@ window.addEventListener('DOMContentLoaded', () => {
 const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".hero__slider", {
   slidesPerView: 1,
   navigation: {
-    nextEl: ".slider-control__btn--next",
-    prevEl: ".slider-control__btn--prev"
+    nextEl: ".hero-next",
+    prevEl: ".hero-prev"
   },
   //loop: true, // DDD 18.02.2024
   effect: "fade",

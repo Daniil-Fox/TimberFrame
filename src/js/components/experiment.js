@@ -71,8 +71,8 @@ window.addEventListener('DOMContentLoaded', () => {
 const heroslider = new Swiper(".hero__slider", {
   slidesPerView: 1,
   navigation: {
-    nextEl: ".slider-control__btn--next",
-    prevEl: ".slider-control__btn--prev",
+    nextEl: ".hero-next",
+    prevEl: ".hero-prev",
   },
   //loop: true, // DDD 18.02.2024
   effect: "fade",
