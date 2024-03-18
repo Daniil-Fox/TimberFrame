@@ -11727,6 +11727,9 @@ span.popular-card__figure {
   display: grid;
   -ms-grid-columns: (1fr)[12];
   grid-template-columns: repeat(12, 1fr);
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   gap: 50px;
 }
 @media (min-width: 1441px) {
@@ -11741,13 +11744,18 @@ span.popular-card__figure {
 }
 @media (max-width: 850px) {
   .timber-main__items {
-    height: 95vh;
+    height: 83vh;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
     gap: 0;
+  }
+}
+@media (max-width: 767px) {
+  .timber-main__items {
+    height: 95vh;
   }
 }
 @media (max-width: 750px) {
@@ -11762,7 +11770,12 @@ span.popular-card__figure {
   -ms-grid-column-span: 8;
   grid-column: 8 span;
 }
-@media (max-width: 850px) {
+@media (min-width: 768px) and (max-width: 850px) {
+  .timber-item__images {
+    height: 35vh;
+  }
+}
+@media (max-width: 768px) {
   .timber-item__images {
     -ms-grid-column: 1;
     grid-column: 1;
@@ -11985,7 +11998,7 @@ span.popular-card__figure {
   padding-left: 60px;
   margin-top: 30px;
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 851px) and (max-width: 1024px) {
   .timber-main__content--sec .timber-item__text {
     padding-left: 0;
     margin-top: 100px;
