@@ -4238,10 +4238,9 @@ span.popular-card__figure {
   width: 100%;
   overflow: hidden;
 }
-.projects-card__link::before {
-  content: "";
+.projects-card__link {
   position: absolute;
-  z-index: 4;
+  z-index: 10;
   inset: 0;
 }
 .projects-card::before {
@@ -6934,7 +6933,7 @@ span.popular-card__figure {
 }
 .built-houses__slide {
   height: 100%;
-  width: 100%;
+  width: auto;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -6944,6 +6943,12 @@ span.popular-card__figure {
   .built-houses__slide {
     max-width: 290px;
   }
+}
+.built-houses__slide img {
+  height: 100%;
+  width: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 .built-houses__slider {
   position: absolute;

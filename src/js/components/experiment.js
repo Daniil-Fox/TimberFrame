@@ -220,8 +220,8 @@ const aboutProdSlider = new Swiper(".about-prod__slider", {
     nextEl: '.slider-control__btn--next',
   }
 });
-
-const builtHouseSlider = new Swiper(".built-houses__slider", {
+// 19.03.2024 <----
+const buildHousesSlideSetting = {
   slidesPerView: "auto",
   spaceBetween: 30,
   loop: true,
@@ -239,10 +239,14 @@ const builtHouseSlider = new Swiper(".built-houses__slider", {
       spaceBetween: 30,
     },
   },
-});
+}
+const builtHouseSlider = new Swiper(".built-houses__slider", buildHousesSlideSetting);
+// ----->
 
 
 window.addEventListener("refresh", () => {
+  builtHouseSlider.destroy()
+  const builtHouseSlider = new Swiper(".built-houses__slider", buildHousesSlideSetting);
   builtHouseSlider.update();
 });
 
@@ -2247,7 +2251,9 @@ document.addEventListener('fetchit:success', (e) => {
 window.addEventListener("orientationchange", function() {
   location.reload()
   ScrollTrigger.refresh()
-
+  builtHouseSlider.destroy()
+  const builtHouseSlider = new Swiper(".built-houses__slider", buildHousesSlideSetting);
+  builtHouseSlider.update();
   if(document.querySelector('.alert') &&  window.innerHeight <= 576 && screen.orientation.type == 'landscape-primary'){
     document.body.style.overflow = 'hidden' // установка сразу
     setTimeout(()=> {

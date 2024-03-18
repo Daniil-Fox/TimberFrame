@@ -323,7 +323,8 @@ const aboutProdSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".
     nextEl: '.slider-control__btn--next'
   }
 });
-const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".built-houses__slider", {
+// 19.03.2024 <----
+const buildHousesSlideSetting = {
   slidesPerView: "auto",
   spaceBetween: 30,
   loop: true,
@@ -341,8 +342,13 @@ const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper("
       spaceBetween: 30
     }
   }
-});
+};
+const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".built-houses__slider", buildHousesSlideSetting);
+// ----->
+
 window.addEventListener("refresh", () => {
+  builtHouseSlider.destroy();
+  const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".built-houses__slider", buildHousesSlideSetting);
   builtHouseSlider.update();
 });
 const itemProductSliderThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".item-product__thumbs", {
@@ -2025,6 +2031,9 @@ document.addEventListener('fetchit:success', e => {
 window.addEventListener("orientationchange", function () {
   location.reload();
   gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.refresh();
+  builtHouseSlider.destroy();
+  const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".built-houses__slider", buildHousesSlideSetting);
+  builtHouseSlider.update();
   if (document.querySelector('.alert') && window.innerHeight <= 576 && screen.orientation.type == 'landscape-primary') {
     document.body.style.overflow = 'hidden'; // установка сразу
     setTimeout(() => {
