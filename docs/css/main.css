@@ -2522,6 +2522,8 @@ html.lenis {
   }
 }
 .modal__window iframe {
+  -webkit-box-sizing: border-box !important;
+  box-sizing: border-box !important;
   position: absolute;
   z-index: 1;
   left: 0;
