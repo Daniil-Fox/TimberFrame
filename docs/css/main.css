@@ -3508,10 +3508,6 @@ html.lenis {
 }
 .tour iframe {
   height: 64rem;
-  width: 100% !important;
-  min-width: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 @media (max-width: 850px) {
   .tour iframe {

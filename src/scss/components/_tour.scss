@@ -6,9 +6,6 @@
 
   iframe {
     height: 64rem;
-    width: 100% !important;
-    min-width: 100%;
-    object-fit: cover;
 
     @include mobile {
       height: 320px;
