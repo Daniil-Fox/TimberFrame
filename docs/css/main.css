@@ -2524,10 +2524,6 @@ html.lenis {
 .modal__window iframe {
   display: block;
   min-width: 100%;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
   width: 100% !important;
   height: 100% !important;
   min-width: 100% !important;
