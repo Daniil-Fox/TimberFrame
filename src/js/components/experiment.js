@@ -283,20 +283,21 @@ const initProductSliders = (productSliders) => {
         },
         loop: true,
       });
-    /* DDD 27.02.2024
-    el.addEventListener("touchmove", (e) => {
+    // DDD 27.02.2024 // 21.03.2024 расскоментировал, чтобы появились элементы управления при касаниях на смартфонах, код немного изменен
+    const pagination = el.querySelector(".product-slider__pagination");
+    const fullScreen = el.closest('.product').querySelector('.implemPhoto-section__btn')
+    el.addEventListener("touchstart", (e) => {
       e.preventDefault();
-      const pagination = el.querySelector(".product-slider__pagination");
-
-      pagination.classList.add("product-slider__pagination--active");
+      pagination?.classList.add("product-slider__pagination--active");
+      fullScreen?.classList.add("active");
     });
     el.addEventListener("touchend", (e) => {
       e.preventDefault();
-      const pagination = el.querySelector(".product-slider__pagination");
       setTimeout(() => {
-        pagination.classList.remove("product-slider__pagination--active");
-      }, 500);
-    }); */
+        pagination?.classList.remove("product-slider__pagination--active");
+        fullScreen?.classList.remove("active");
+      }, 1000);
+    });
   });
 };
 if(document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1024px)').matches){
@@ -2263,3 +2264,28 @@ window.addEventListener("orientationchange", function() {
     document.body.style.overflow = null
   }
 }, false);
+
+
+
+// cookies alert
+
+const cookies = document.querySelector('.cookies')
+if(cookies){
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      cookies.classList.add('active')
+    }, 300)
+
+    const cookiesBtnAccept = cookies.querySelector('.cookies__btn')
+
+    cookiesBtnAccept.addEventListener('click', e => {
+      e.preventDefault()
+      cookies.classList.remove('active')
+      setTimeout(() => {
+        cookies.remove()
+      }, 300)
+    })
+
+
+  })
+}
