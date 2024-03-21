@@ -7365,7 +7365,6 @@ span.popular-card__figure {
     z-index: -1;
     padding: 16px 24px;
     position: fixed;
-    z-index: 10;
     left: 0;
     right: 0;
     bottom: 60px;
