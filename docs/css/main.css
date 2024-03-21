@@ -2522,7 +2522,8 @@ html.lenis {
   }
 }
 .modal__window iframe {
-  position: absolute;
+  display: block;
+  min-width: 100%;
   left: 0;
   top: 0;
   right: 0;
