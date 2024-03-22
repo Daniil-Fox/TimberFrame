@@ -2250,7 +2250,7 @@ document.addEventListener('fetchit:success', (e) => {
     btn.classList.add("btn-disabled");
   }
 })
-
+// <---- 22.03.2024
 import {mobileCheck} from './../functions/mobile-check.js'
 const alertDisplay = document.querySelector('.alert')
 function checkPosition(){
@@ -2299,3 +2299,4 @@ if(cookies){
 
   })
 }
+// ---->
