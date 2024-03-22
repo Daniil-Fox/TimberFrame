@@ -283,25 +283,25 @@ const initProductSliders = (productSliders) => {
         },
         loop: true,
       });
-    // DDD 27.02.2024 // 21.03.2024 расскоментировал, чтобы появились элементы управления при касаниях на смартфонах, код немного изменен
-    const pagination = el.querySelector(".product-slider__pagination");
-    const fullScreen = el.closest('.product').querySelector('.implemPhoto-section__btn')
-    el.addEventListener("touchstart", (e) => {
-      e.preventDefault();
-      pagination?.classList.add("product-slider__pagination--active");
-      fullScreen?.classList.add("active");
-    });
-    el.addEventListener("touchend", (e) => {
-      e.preventDefault();
-      setTimeout(() => {
-        pagination?.classList.remove("product-slider__pagination--active");
-        fullScreen?.classList.remove("active");
-      }, 1000);
-    });
+    // DDD 27.02.2024 // 22.02.2024 снова закомментировал, думаю этот блок можно удалить вообще
+    // const pagination = el.querySelector(".product-slider__pagination");
+    // const fullScreen = el.closest('.product').querySelector('.implemPhoto-section__btn')
+    // el.addEventListener("touchstart", (e) => {
+    //   e.preventDefault();
+    //   pagination?.classList.add("product-slider__pagination--active");
+    //   fullScreen?.classList.add("active");
+    // });
+    // el.addEventListener("touchend", (e) => {
+    //   e.preventDefault();
+    //   setTimeout(() => {
+    //     pagination?.classList.remove("product-slider__pagination--active");
+    //     fullScreen?.classList.remove("active");
+    //   }, 1000);
+    // });
   });
 };
 // <--- 21.03.2024
-if(document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1366px)').matches){
+if(document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1399px)').matches){
   initProductSliders(document.querySelectorAll('.product__slider'))
 }
 // --->
@@ -1697,7 +1697,7 @@ const implemPhotoSection = document.querySelector('.implemPhoto-section')
 if(implemPhotoSection) {
   const productSliders = document.querySelectorAll(".product__slider");
   // <--- 21.03.2024
-  if (window.matchMedia("(max-width: 1366px)").matches) {
+  if (window.matchMedia("(max-width: 1399px)").matches) {
     initProductSliders(productSliders);
   }
   // --->
@@ -2251,24 +2251,31 @@ document.addEventListener('fetchit:success', (e) => {
   }
 })
 
-
+import {mobileCheck} from './../functions/mobile-check.js'
+const alertDisplay = document.querySelector('.alert')
+function checkPosition(){
+  if(alertDisplay &&  window.innerHeight <= 576 && (mobileCheck() == "Android" ||  mobileCheck() == "iOS")){
+    setTimeout(() => {
+      document.body.style.overflow = 'hidden'
+    }, 4000)
+    document.body.style.overflow = 'hidden'
+    alertDisplay.style.display = 'flex'
+    console.log(mobileCheck());
+  } else {
+    document.body.style.overflow = null
+    alertDisplay.style.display = null
+  }
+}
 window.addEventListener("orientationchange", function() {
   location.reload()
   ScrollTrigger.refresh()
   builtHouseSlider.destroy()
   const builtHouseSlider = new Swiper(".built-houses__slider", buildHousesSlideSetting);
   builtHouseSlider.update();
-  if(document.querySelector('.alert') &&  window.innerHeight <= 576 && screen.orientation.type == 'landscape-primary'){
-    document.body.style.overflow = 'hidden' // установка сразу
-    setTimeout(()=> {
-      document.body.style.overflow = 'hidden' // прелоадер сбрасывает свойство через 3с, поэтому еще раз зададим
-    }, 3050)
-  } else {
-    document.body.style.overflow = null
-  }
+
+  checkPosition()
 }, false);
-
-
+checkPosition()
 
 // cookies alert
 
