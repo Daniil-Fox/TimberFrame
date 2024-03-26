@@ -6,6 +6,7 @@
 
   iframe {
     height: 64rem;
+    width: 100%;
 
     @include mobile {
       height: 320px;

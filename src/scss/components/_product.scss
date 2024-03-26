@@ -363,6 +363,10 @@
   z-index: 8;
   display: flex;
 
+  @media (max-width: 1366px) {
+    display: none;
+  }
+
   &__item {
     flex-grow: 1;
 
@@ -403,6 +407,7 @@
       object-fit: cover;
     }
   }
+
 }
 
 .image-pagination {
@@ -428,6 +433,10 @@
       background-color: var(--focus-color);
     }
   }
+
+  @media (max-width: 1366px) {
+    display: none;
+  }
 }
 
 .product-slider__pagination {
@@ -436,7 +445,7 @@
   transform: translateY(16px);
   transition: opacity 0.2s ease-in, transform 0.2s ease-in;
 
-  @media (max-width: 1399px) {
+  @media (max-width: 1366px) {
     opacity: 1;
     transform: none;
   }

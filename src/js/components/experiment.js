@@ -301,7 +301,7 @@ const initProductSliders = (productSliders) => {
   });
 };
 // <--- 21.03.2024
-if(document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1399px)').matches){
+if(document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1366px)').matches){
   initProductSliders(document.querySelectorAll('.product__slider'))
 }
 // --->
@@ -1697,7 +1697,7 @@ const implemPhotoSection = document.querySelector('.implemPhoto-section')
 if(implemPhotoSection) {
   const productSliders = document.querySelectorAll(".product__slider");
   // <--- 21.03.2024
-  if (window.matchMedia("(max-width: 1399px)").matches) {
+  if (window.matchMedia("(max-width: 1366px)").matches) {
     initProductSliders(productSliders);
   }
   // --->
