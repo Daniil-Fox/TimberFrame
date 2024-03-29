@@ -1438,6 +1438,8 @@ html.lenis {
   background-color: var(--white-color);
   align-items: center;
   padding: 20px;
+  flex-direction: column;
+  justify-content: center;
 
   h3 {
     margin: 0;
@@ -1446,6 +1448,22 @@ html.lenis {
     text-align: center;
 
     font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    span {
+      color: var(--focus-color);
+    }
+  }
+
+  h5 {
+    margin: 0;
+    margin: 0;
+    color: var(--black---brand, #252321);
+    text-align: center;
+
+    font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;

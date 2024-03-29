@@ -1596,6 +1596,13 @@ html.lenis {
   -ms-flex-align: center;
   align-items: center;
   padding: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .alert h3 {
   margin: 0;
@@ -1608,6 +1615,19 @@ html.lenis {
   line-height: normal;
 }
 .alert h3 span {
+  color: var(--focus-color);
+}
+.alert h5 {
+  margin: 0;
+  margin: 0;
+  color: var(--black---brand, #252321);
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.alert h5 span {
   color: var(--focus-color);
 }
 

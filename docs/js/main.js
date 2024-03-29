@@ -2046,7 +2046,7 @@ document.addEventListener('fetchit:success', e => {
 
 const alertDisplay = document.querySelector('.alert');
 function checkPosition() {
-  if (alertDisplay && _vendor_device_js__WEBPACK_IMPORTED_MODULE_13___default().mobile() && _vendor_device_js__WEBPACK_IMPORTED_MODULE_13___default().landscape()) {
+  if (alertDisplay && _vendor_device_js__WEBPACK_IMPORTED_MODULE_13___default().landscape() && window.innerHeight <= 567) {
     setTimeout(() => {
       document.body.style.overflow = 'hidden';
     }, 4000);
@@ -2066,7 +2066,7 @@ window.addEventListener("orientationchange", function () {
   checkPosition();
 }, false);
 checkPosition();
-
+window.addEventListener('resize', checkPosition);
 // cookies alert
 
 const cookies = document.querySelector('.cookies');
