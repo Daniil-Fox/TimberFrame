@@ -2207,6 +2207,7 @@ if(document.querySelector('.timber-main__content--main')){
 }
 // DDD 22.02.2024
 import Cookies from "js-cookie";
+import device from "../vendor/device.js";
 
 const likeBtns = document.querySelectorAll('.btn--like');
 const favBtnQuantityBtns = document.querySelectorAll(".favorites-btn__quantity");
@@ -2254,11 +2255,13 @@ document.addEventListener('fetchit:success', (e) => {
 // <---- 22.03.2024
 // import {mobileCheck} from './../functions/mobile-check.js'
 
-var MobileDetect = require('mobile-detect')
-var md = new MobileDetect(window.navigator.userAgent)
+// var MobileDetect = require('mobile-detect')
+// var md = new MobileDetect(window.navigator.userAgent)
+
+
 const alertDisplay = document.querySelector('.alert')
 function checkPosition(){
-  if(alertDisplay &&  (screen.orientation.type == 'landscape-primary' || screen.orientation.type == 'landscape-secondary' ) && md.mobile()){
+  if(alertDisplay && device.mobile() && device.landscape()){
     setTimeout(() => {
       document.body.style.overflow = 'hidden'
     }, 4000)
