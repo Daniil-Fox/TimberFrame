@@ -2255,7 +2255,7 @@ document.addEventListener('fetchit:success', (e) => {
 import {mobileCheck} from './../functions/mobile-check.js'
 const alertDisplay = document.querySelector('.alert')
 function checkPosition(){
-  if(alertDisplay &&  screen.orientation.type == 'landscape-primary' && (mobileCheck().toLowerCase() == "android" ||  mobileCheck().toLowerCase() == "ios")){
+  if(alertDisplay &&  (screen.orientation.type == 'landscape-primary' || screen.orientation.type == 'landscape-secondary' ) && (mobileCheck().toLowerCase() == "android" ||  mobileCheck().toLowerCase() == "ios")){
     setTimeout(() => {
       document.body.style.overflow = 'hidden'
     }, 4000)
@@ -2276,6 +2276,7 @@ window.addEventListener("orientationchange", function() {
 
   checkPosition()
 }, false);
+
 checkPosition()
 
 // cookies alert

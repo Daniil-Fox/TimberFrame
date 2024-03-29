@@ -2040,7 +2040,7 @@ document.addEventListener('fetchit:success', e => {
 
 const alertDisplay = document.querySelector('.alert');
 function checkPosition() {
-  if (alertDisplay && screen.orientation.type == 'landscape-primary' && ((0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)().toLowerCase() == "android" || (0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)().toLowerCase() == "ios")) {
+  if (alertDisplay && (screen.orientation.type == 'landscape-primary' || screen.orientation.type == 'landscape-secondary') && ((0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)().toLowerCase() == "android" || (0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)().toLowerCase() == "ios")) {
     setTimeout(() => {
       document.body.style.overflow = 'hidden';
     }, 4000);
