@@ -2252,16 +2252,18 @@ document.addEventListener('fetchit:success', (e) => {
   }
 })
 // <---- 22.03.2024
-import {mobileCheck} from './../functions/mobile-check.js'
+// import {mobileCheck} from './../functions/mobile-check.js'
+
+var MobileDetect = require('mobile-detect')
+var md = new MobileDetect(window.navigator.userAgent)
 const alertDisplay = document.querySelector('.alert')
 function checkPosition(){
-  if(alertDisplay &&  (screen.orientation.type == 'landscape-primary' || screen.orientation.type == 'landscape-secondary' ) && (mobileCheck().toLowerCase() == "android" ||  mobileCheck().toLowerCase() == "ios")){
+  if(alertDisplay &&  (screen.orientation.type == 'landscape-primary' || screen.orientation.type == 'landscape-secondary' ) && md.mobile()){
     setTimeout(() => {
       document.body.style.overflow = 'hidden'
     }, 4000)
     document.body.style.overflow = 'hidden'
     alertDisplay.style.display = 'flex'
-    console.log(mobileCheck());
   } else {
     document.body.style.overflow = null
     alertDisplay.style.display = null

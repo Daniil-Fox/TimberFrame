@@ -63,6 +63,7 @@
     "inputmask": "^5.0.7",
     "js-cookie": "^3.0.5",
     "just-validate": "^3.3.3",
+    "mobile-detect": "^1.4.5",
     "parallax-js": "^3.1.0",
     "rellax": "^1.12.1",
     "resize-observer-polyfill": "^1.5.1",
