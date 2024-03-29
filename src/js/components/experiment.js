@@ -2255,7 +2255,7 @@ document.addEventListener('fetchit:success', (e) => {
 import {mobileCheck} from './../functions/mobile-check.js'
 const alertDisplay = document.querySelector('.alert')
 function checkPosition(){
-  if(alertDisplay &&  screen.orientation.type == 'landscape-primary' && window.innerHeight < 576 && (mobileCheck() == "Android" ||  mobileCheck() == "iOS")){
+  if(alertDisplay &&  screen.orientation.type == 'landscape-primary' && (mobileCheck().toLowerCase() == "android" ||  mobileCheck().toLowerCase() == "ios")){
     setTimeout(() => {
       document.body.style.overflow = 'hidden'
     }, 4000)
